@@ -1,11 +1,13 @@
-from random import randint
+from datetime import datetime
 
-result = set()
+#func for counting days from today date
+def get_days_from_today(time_date):
 
-#Creat func for lottery tickets numbers
-def get_numbers_ticket(min, max, quantity):
-    while len(result) != quantity:
-        result.add(randint(min, max))
-    return print(sorted(list(result)))
+    converted_date = datetime.strptime(time_date, "%Y.%m.%d").date() #convertation
+    today_date = datetime.now().date() #today date
+    diff_days = today_date - converted_date #counting
 
-get_numbers_ticket(1, 40, 5)
+    return diff_days.days
+
+
+print(get_days_from_today('2024.03.12'))
