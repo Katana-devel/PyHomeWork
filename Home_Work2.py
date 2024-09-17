@@ -1,9 +1,8 @@
 from random import randint
 
-result = set()
-
 #Creat func for lottery tickets numbers
 def get_numbers_ticket(min, max, quantity):
+    result = set()
     while len(result) != quantity:
         result.add(randint(min, max))
     sorted_result = sorted(list(result))
