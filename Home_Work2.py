@@ -6,6 +6,7 @@ result = set()
 def get_numbers_ticket(min, max, quantity):
     while len(result) != quantity:
         result.add(randint(min, max))
-    return print(sorted(list(result)))
+    sorted_result = sorted(list(result))
+    return sorted_result
 
-get_numbers_ticket(1, 40, 5)
+print(get_numbers_ticket(1, 40, 5))
