@@ -7,7 +7,7 @@ def get_days_from_today(time_date):
         converted_date = datetime.strptime(time_date, "%Y-%m-%d").date()
         today_date = datetime.now().date()
         diff_days = today_date - converted_date
-        return diff_days
+        return diff_days.days
     except ValueError:
         print('Value i`snt correct')
         return None
