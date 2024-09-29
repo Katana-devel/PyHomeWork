@@ -1,4 +1,3 @@
-
 def parse_input(user_input):
     cmd, *args = user_input.split()
     cmd = cmd.strip().lower()
@@ -13,9 +12,13 @@ def change_contact(args, contacts):
     name, phone = args
     contacts[name] = phone
     return "contact changed", contacts
-
+def show_phone(args, contacts):
+    name = args[0]
+    if name in contacts:
+        return contacts[name]
 def show_all(contacts):
     return '\n'.join([f"{name}: {phone}"for name, phone in contacts.items()])
+
 def main():
     contacts = {}
     print("Welcome to the assistant bot!")
@@ -34,6 +37,8 @@ def main():
             print(change_contact(args, contacts))
         elif command == 'all':
             print(show_all(contacts))
+        elif command == 'phone':
+            print(show_phone(args,contacts))
         else:
             print("Invalid command.")
 
