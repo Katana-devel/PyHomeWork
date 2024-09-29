@@ -8,13 +8,17 @@ def total_salary(path):
             for line in file:
                 salary = line.split(',')[1]
                 salary_list.append(int(salary))
+
+        if len(salary_list) == 0:
+            print('err: file us empty')
+            return None, None
+
+        total = sum(salary_list)
+        avarage = total / len(salary_list)
+        return total, avarage
     except Exception as e:
         print(f"{e} with file file")
-    
-    total = sum(salary_list)
-    avarage = total / len(salary_list)
 
-    return total, avarage
 
 
 total, average = total_salary("C:/PyHomeWork/HomeWorks/path.txt")
